@@ -6,6 +6,8 @@
  * By Le Xue
 '''
 
+import os
+
 # Modified from github.com/openai/CLIP
 from collections import OrderedDict
 
@@ -319,7 +321,8 @@ def ULIP_PointBERT(args):
     # =====================================================================
     # import the 3D backbone and specify the output point cloud feature dimension
     from .pointbert.point_encoder import PointTransformer
-    config_addr = './models/pointbert/PointTransformer_8192point.yaml'
+    dirname = os.path.dirname(__file__)
+    config_addr = os.path.join(dirname, 'pointbert/PointTransformer_8192point.yaml')
     config = cfg_from_yaml_file(config_addr)
     point_encoder = PointTransformer(config.model, args=args)
     pc_feat_dims = 768
