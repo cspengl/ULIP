@@ -11,10 +11,10 @@ from collections import OrderedDict
 
 import timm
 from torch import nn
-from models.pointnet2.pointnet2 import Pointnet2_Ssg
-from data.dataset_3d import  *
+from .pointnet2.pointnet2 import Pointnet2_Ssg
+from ..data.dataset_3d import  *
 
-from models import losses
+from . import losses
 from torch.nn.parameter import Parameter
 from easydict import EasyDict
 import open_clip
@@ -318,7 +318,7 @@ def ULIP_PointBERT(args):
 
     # =====================================================================
     # import the 3D backbone and specify the output point cloud feature dimension
-    from models.pointbert.point_encoder import PointTransformer
+    from .pointbert.point_encoder import PointTransformer
     config_addr = './models/pointbert/PointTransformer_8192point.yaml'
     config = cfg_from_yaml_file(config_addr)
     point_encoder = PointTransformer(config.model, args=args)

@@ -15,10 +15,10 @@ import torch.utils.data as data
 import yaml
 from easydict import EasyDict
 
-from utils.io import IO
-from utils.build import DATASETS
-from utils.logger import *
-from utils.build import build_dataset_from_cfg
+from ..utils.io import IO
+from ..utils.build import DATASETS
+from ..utils.logger import *
+from ..utils.build import build_dataset_from_cfg
 import json
 from tqdm import tqdm
 import pickle
@@ -541,7 +541,7 @@ class Objaverse_Lvis_Colored(data.Dataset):
 
 import collections.abc as container_abcs
 int_classes = int
-from torch._six import string_classes
+string_classes = str
 
 import re
 default_collate_err_msg_format = (

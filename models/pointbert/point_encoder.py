@@ -2,11 +2,12 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from timm.models.layers import DropPath
-from models.pointbert.dvae import Group
-from models.pointbert.dvae import Encoder
-from models.pointbert.logger import print_log
 
-from models.pointbert.checkpoint import get_missing_parameters_message, get_unexpected_parameters_message
+from .dvae import Group
+from .dvae import Encoder
+from .logger import print_log
+
+from .checkpoint import get_missing_parameters_message, get_unexpected_parameters_message
 
 def cal_model_parm_nums(model):
     total = sum([param.nelement() for param in model.parameters()])
