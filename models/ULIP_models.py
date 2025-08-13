@@ -254,8 +254,9 @@ def ULIP_PN_SSG(args):
                             transformer_width=512, transformer_heads=8, transformer_layers=12, pc_feat_dims=pc_feat_dims)
 
     if not args.evaluate_3d:
+        slip_path = args.slip_path if hasattr(args, 'slip_path') else './data/initialize_models/slip_base_100ep.pt'
         # load the pretrained model
-        pretrain_slip_model = torch.load('./data/initialize_models/slip_base_100ep.pt', map_location=torch.device('cpu'))
+        pretrain_slip_model = torch.load(slip_path, map_location=torch.device('cpu'))
         pretrain_slip_model_params = pretrain_slip_model['state_dict']
         pretrain_slip_model_params = {param_name.replace('module.', ''): param for param_name, param in
                                       pretrain_slip_model_params.items()}
@@ -290,8 +291,9 @@ def ULIP_PN_MLP(args):
                             transformer_width=512, transformer_heads=8, transformer_layers=12, pc_feat_dims=pc_feat_dims)
 
     if not args.evaluate_3d:
+        slip_path = args.slip_path if hasattr(args, 'slip_path') else './data/initialize_models/slip_base_100ep.pt'
         # load the pretrained model
-        pretrain_slip_model = torch.load('./data/initialize_models/slip_base_100ep.pt', map_location=torch.device('cpu'))
+        pretrain_slip_model = torch.load(slip_path, map_location=torch.device('cpu'))
         pretrain_slip_model_params = pretrain_slip_model['state_dict']
         pretrain_slip_model_params = {param_name.replace('module.', ''): param for param_name, param in
                                       pretrain_slip_model_params.items()}
@@ -328,8 +330,9 @@ def ULIP_PointBERT(args):
                             transformer_width=512, transformer_heads=8, transformer_layers=12, pc_feat_dims=pc_feat_dims)
 
     if not args.evaluate_3d:
+        slip_path = args.slip_path if hasattr(args, 'slip_path') else './data/initialize_models/slip_base_100ep.pt'
         # load the pretrained model
-        pretrain_slip_model = torch.load('./data/initialize_models/slip_base_100ep.pt', map_location=torch.device('cpu'))
+        pretrain_slip_model = torch.load(slip_path, map_location=torch.device('cpu'))
         pretrain_slip_model_params = pretrain_slip_model['state_dict']
         pretrain_slip_model_params = {param_name.replace('module.', ''): param for param_name, param in
                                       pretrain_slip_model_params.items()}
@@ -384,8 +387,9 @@ def ULIP_PN_NEXT(args):
                             transformer_width=512, transformer_heads=8, transformer_layers=12, pc_feat_dims=pc_feat_dims)
 
     if not args.evaluate_3d:
+        slip_path = args.slip_path if hasattr(args, 'slip_path') else './data/initialize_models/slip_base_100ep.pt'
         # load the pretrained model
-        pretrain_slip_model = torch.load('./data/initialize_models/slip_base_100ep.pt', map_location=torch.device('cpu'))
+        pretrain_slip_model = torch.load(slip_path, map_location=torch.device('cpu'))
         pretrain_slip_model_params = pretrain_slip_model['state_dict']
         pretrain_slip_model_params = {param_name.replace('module.', ''): param for param_name, param in
                                       pretrain_slip_model_params.items()}
@@ -424,8 +428,9 @@ def ULIP_CUSTOMIZED(args):
                             transformer_width=512, transformer_heads=8, transformer_layers=12, pc_feat_dims=pc_feat_dims)
 
     if not args.evaluate_3d:
+        slip_path = args.slip_path if hasattr(args, 'slip_path') else './data/initialize_models/slip_base_100ep.pt'
         # load the pretrained model
-        pretrain_slip_model = torch.load('./data/initialize_models/slip_base_100ep.pt', map_location=torch.device('cpu'))
+        pretrain_slip_model = torch.load(slip_path, map_location=torch.device('cpu'))
         pretrain_slip_model_params = pretrain_slip_model['state_dict']
         pretrain_slip_model_params = {param_name.replace('module.', ''): param for param_name, param in
                                       pretrain_slip_model_params.items()}
