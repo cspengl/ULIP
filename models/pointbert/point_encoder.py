@@ -153,8 +153,8 @@ class PointTransformer(nn.Module):
         self.norm = nn.LayerNorm(self.trans_dim)
         # self.load_model_from_ckpt('/export/home/repos/SLIP/pretrained_models/point_transformer_8192.pt')
         if not self.args.evaluate_3d:
-            weight_path = self.args.weight_path if hasattr(self.args, weight_path) else './data/initialize_models/point_bert_pretrained.pt'
-            self.load_model_from_ckpt('./data/initialize_models/point_bert_pretrained.pt')
+            weight_path = self.args.weight_path if hasattr(self.args, 'weight_path') else './data/initialize_models/point_bert_pretrained.pt'
+            self.load_model_from_ckpt(weight_path)
 
         # self.cls_head_finetune = nn.Sequential(
         #     nn.Linear(self.trans_dim * 2, 256),
