@@ -3,7 +3,7 @@ import torch.nn as nn
 from .simpleview_util import PCViews
 from ..build import MODELS
 # from roi_align import CropAndResize # crop_and_resize module
-from openpoints.transforms import build_transforms_from_cfg
+from ...transforms import build_transforms_from_cfg
 
 
 class Squeeze(nn.Module):

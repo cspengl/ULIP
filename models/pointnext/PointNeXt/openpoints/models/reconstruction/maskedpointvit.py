@@ -4,10 +4,10 @@ Copyright 2022@PointNeXt team
 import logging
 import torch
 import torch.nn as nn
-from openpoints.models.layers import create_norm
-from openpoints.models.layers.attention import Block
-from openpoints.models.build import MODELS
-from openpoints.cpp.chamfer_dist import ChamferDistanceL1
+from ..layers import create_norm
+from ..layers.attention import Block
+from ..build import MODELS
+from ...cpp.chamfer_dist import ChamferDistanceL1
 from ..backbone import PointViT
 
 

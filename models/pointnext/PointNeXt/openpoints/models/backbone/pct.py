@@ -9,7 +9,7 @@ from pickle import FALSE
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from openpoints.models.layers import SubsampleGroup
+from ..layers import SubsampleGroup
 
 
 class Local_op(nn.Module):
