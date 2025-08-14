@@ -335,7 +335,7 @@ def ULIP_PointBERT(args):
     if not args.evaluate_3d:
         slip_path = args.slip_path if hasattr(args, 'slip_path') else './data/initialize_models/slip_base_100ep.pt'
         # load the pretrained model
-        pretrain_slip_model = torch.load(slip_path, map_location=torch.device('cpu'))
+        pretrain_slip_model = torch.load(slip_path, map_location=torch.device('cpu'), weights_only=False)
         pretrain_slip_model_params = pretrain_slip_model['state_dict']
         pretrain_slip_model_params = {param_name.replace('module.', ''): param for param_name, param in
                                       pretrain_slip_model_params.items()}
