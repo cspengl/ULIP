@@ -15,7 +15,8 @@ from .PointNeXt.openpoints.utils import EasyConfig, cal_model_parm_nums
 from .PointNeXt.openpoints.models import build_model_from_cfg
 
 def PointNEXT():
-    cfg_path = './models/pointnext/pointnext-s.yaml'
+    dirname = os.path.dirname(__file__)
+    cfg_path = os.path.join(dirname, 'pointnext-s.yaml')
 
     cfg = EasyConfig()
     cfg.load(cfg_path, recursive=True)
